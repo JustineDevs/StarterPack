@@ -12,22 +12,6 @@ your-project/
 │   ├── README.md
 │   └── FINAL-CHECKLIST.md
 │
-├── 📋 Planning Sections (planning/)
-│   ├── 0-Master-Index.md
-│   ├── 1-Executive-Summary.md
-│   ├── 2-Objectives-Success-Metrics.md
-│   ├── 3-Scope-Definition.md
-│   ├── 4-System-Architecture-Design.md
-│   ├── 5-Technical-Execution-Workflow.md
-│   ├── 6-Project-Phases-Timeline.md
-│   ├── 7-Resource-Planning.md
-│   ├── 8-Risk-Management.md
-│   ├── 9-Execution-Strategy.md
-│   ├── 10-Monitoring-Reporting.md
-│   ├── 11-ROI-Value-Realization.md
-│   ├── 12-Governance-Decision-Making.md
-│   └── 13-Lessons-Learned-Continuous-Improvement.md
-│
 ├── 📚 Reference Guides
 │   ├── TECHNICAL-SUMMARY.md
 │   ├── SYSTEM-ARCHITECTURE.md
@@ -36,21 +20,41 @@ your-project/
 │   ├── MASTER-FILE-INDEX.md
 │   └── API-REFERENCE.md
 │
-├── 🤖 Claude Skills
+├── 🤖 Claude Skills (BlueprintKit)
 │   └── .claude/
 │       └── skills/
-│           ├── tech-stack-selector/
-│           │   └── SKILL.md
-│           ├── architecture-decisions/
-│           │   └── SKILL.md
-│           ├── code-standards-enforcer/
-│           │   └── SKILL.md
-│           ├── ci-cd-pipeline-builder/
-│           │   └── SKILL.md
-│           ├── agile-executor/
-│           │   └── SKILL.md
-│           └── project-risk-identifier/
-│               └── SKILL.md
+│           └── blueprintkit/
+│               ├── SKILL.md (consolidated skill definition)
+│               ├── planning/ (14 planning sections)
+│               │   ├── 0-Master-Index.md
+│               │   ├── 1-Executive-Summary.md
+│               │   ├── 2-Objectives-Success-Metrics.md
+│               │   ├── 3-Scope-Definition.md
+│               │   ├── 4-System-Architecture-Design.md
+│               │   ├── 5-Technical-Execution-Workflow.md
+│               │   ├── 6-Project-Phases-Timeline.md
+│               │   ├── 7-Resource-Planning.md
+│               │   ├── 8-Risk-Management.md
+│               │   ├── 9-Execution-Strategy.md
+│               │   ├── 10-Monitoring-Reporting.md
+│               │   ├── 11-ROI-Value-Realization.md
+│               │   ├── 12-Governance-Decision-Making.md
+│               │   └── 13-Lessons-Learned-Continuous-Improvement.md
+│               ├── tech-stack-selector/
+│               │   └── SKILL.md
+│               ├── architecture-decisions/
+│               │   └── SKILL.md
+│               ├── code-standards-enforcer/
+│               │   └── SKILL.md
+│               ├── ci-cd-pipeline-builder/
+│               │   └── SKILL.md
+│               ├── agile-executor/
+│               │   └── SKILL.md
+│               ├── project-risk-identifier/
+│               │   └── SKILL.md
+│               ├── automation-orchestrator/
+│               ├── webapp-testing/
+│               └── web-artifacts-builder/
 │
 ├── 🔧 Configuration
 │   ├── .github/
@@ -121,20 +125,20 @@ your-project/
 
 **Purpose:** Complete project planning framework
 
-- `planning/0-Master-Index.md` - Index of all sections
-- `planning/1-Executive-Summary.md` - Vision and problem
-- `planning/2-Objectives-Success-Metrics.md` - Goals and KPIs
-- `planning/3-Scope-Definition.md` - What's in/out
-- `planning/4-System-Architecture-Design.md` - Technical design
-- `planning/5-Technical-Execution-Workflow.md` - Implementation guide
-- `planning/6-Project-Phases-Timeline.md` - Phases and milestones
-- `planning/7-Resource-Planning.md` - Team and budget
-- `planning/8-Risk-Management.md` - Risk register
-- `planning/9-Execution-Strategy.md` - Daily workflow
-- `planning/10-Monitoring-Reporting.md` - Metrics and reporting
-- `planning/11-ROI-Value-Realization.md` - Financial analysis
-- `planning/12-Governance-Decision-Making.md` - Decision framework
-- `planning/13-Lessons-Learned-Continuous-Improvement.md` - Learning process
+- `.claude/skills/blueprintkit/planning/0-Master-Index.md` - Index of all sections
+- `.claude/skills/blueprintkit/planning/1-Executive-Summary.md` - Vision and problem
+- `.claude/skills/blueprintkit/planning/2-Objectives-Success-Metrics.md` - Goals and KPIs
+- `.claude/skills/blueprintkit/planning/3-Scope-Definition.md` - What's in/out
+- `.claude/skills/blueprintkit/planning/4-System-Architecture-Design.md` - Technical design
+- `.claude/skills/blueprintkit/planning/5-Technical-Execution-Workflow.md` - Implementation guide
+- `.claude/skills/blueprintkit/planning/6-Project-Phases-Timeline.md` - Phases and milestones
+- `.claude/skills/blueprintkit/planning/7-Resource-Planning.md` - Team and budget
+- `.claude/skills/blueprintkit/planning/8-Risk-Management.md` - Risk register
+- `.claude/skills/blueprintkit/planning/9-Execution-Strategy.md` - Daily workflow
+- `.claude/skills/blueprintkit/planning/10-Monitoring-Reporting.md` - Metrics and reporting
+- `.claude/skills/blueprintkit/planning/11-ROI-Value-Realization.md` - Financial analysis
+- `.claude/skills/blueprintkit/planning/12-Governance-Decision-Making.md` - Decision framework
+- `.claude/skills/blueprintkit/planning/13-Lessons-Learned-Continuous-Improvement.md` - Learning process
 
 ### Reference Guides
 
@@ -151,7 +155,7 @@ your-project/
 
 **Purpose:** Auto-activated AI assistance
 
-Located in `.claude/skills/`:
+Located in `.claude/skills/blueprintkit/`:
 - `tech-stack-selector/` - Technology selection
 - `architecture-decisions/` - ADR creation
 - `code-standards-enforcer/` - Code quality
