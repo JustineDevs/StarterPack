@@ -2,7 +2,7 @@
   <img src="starter-pack/public/img/banner.png" alt="The Blueprint for High-Velocity Technical Execution" width="800" />
 </div>
 
-# Starter Pack Template that synthesizes end-to-end execution playbooks, frameworks, and blueprints from practitioners who've generated measurable ROI.
+## Starter Pack Template that synthesizes end-to-end execution playbooks, frameworks, and blueprints from practitioners who've generated measurable ROI.
 
 ## Repository Structure
 
