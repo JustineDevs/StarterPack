@@ -20,15 +20,29 @@ async function getPlanningContent(slug: string[]) {
   if (fileName.endsWith('.md')) {
     fileName = fileName.slice(0, -3)
   }
-  const filePath = join(process.cwd(), '.claude', 'skills', 'blueprintkit', 'planning', `${fileName}.md`)
   
-  try {
-    const content = await readFile(filePath, 'utf-8')
-    return content
-  } catch (error) {
-    console.error('Error reading planning file:', filePath, error)
-    return null
+  // Try multiple possible paths for planning files
+  // Path 1: From starter-pack/ to ../skill/ (monorepo structure)
+  // Path 2: From root to skill/ (if running from root)
+  // Path 3: Direct .claude path (if files are in starter-pack)
+  const possiblePaths = [
+    join(process.cwd(), '..', 'skill', '.claude', 'skills', 'blueprintkit', 'planning', `${fileName}.md`),
+    join(process.cwd(), 'skill', '.claude', 'skills', 'blueprintkit', 'planning', `${fileName}.md`),
+    join(process.cwd(), '.claude', 'skills', 'blueprintkit', 'planning', `${fileName}.md`),
+  ]
+  
+  for (const filePath of possiblePaths) {
+    try {
+      const content = await readFile(filePath, 'utf-8')
+      return content
+    } catch (error) {
+      // Try next path
+      continue
+    }
   }
+  
+  console.error('Error reading planning file:', fileName, 'Tried paths:', possiblePaths)
+  return null
 }
 
 export default async function PlanningPage({ params }: PlanningPageProps) {
