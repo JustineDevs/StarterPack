@@ -1,6 +1,8 @@
-# BlueprintKit Monorepo
+<div align="center">
+  <img src="starter-pack/public/img/banner.png" alt="The Blueprint for High-Velocity Technical Execution" width="800" />
+</div>
 
-Complete project planning and execution framework organized as a monorepo with separate skill and starter pack components.
+# Starter Pack Template that synthesizes end-to-end execution playbooks, frameworks, and blueprints from practitioners who've generated measurable ROI.
 
 ## Repository Structure
 
@@ -14,11 +16,11 @@ The skill-only files for publishing to [skills.sh](https://skills.sh). This dire
 - `SKILL.md` - Root skill definition for skills.sh compatibility
 - `LICENSE` - MIT License
 
-**Publishing**: This component is also available as a separate repository at [JustineDevs/skills-collection](https://github.com/JustineDevs/skills-collection) for clean skills.sh installation.
+**Publishing**: This component is also available as a separate repository at [JustineDevs/blueprintkit-skill](https://github.com/JustineDevs/blueprintkit-skill) for clean skills.sh installation.
 
 **Installation**:
 ```bash
-npx skills add JustineDevs/skills-collection
+npx skills add JustineDevs/blueprintkit-skill
 ```
 
 ### 🚀 `starter-pack/` - Complete Starter Pack
@@ -44,7 +46,7 @@ The full starter pack with frontend, documentation, and all project files:
 Install the skill for your AI agent:
 
 ```bash
-npx skills add JustineDevs/skills-collection
+npx skills add JustineDevs/blueprintkit-skill
 ```
 
 ### For Starter Pack Usage
@@ -120,15 +122,15 @@ BlueprintKit/
 
 ## Related Repositories
 
-- **Skills Repository**: [JustineDevs/skills-collection](https://github.com/JustineDevs/skills-collection) - Clean skill-only repository for skills.sh
-- **Main Repository**: [JustineDevs/BlueprintKit](https://github.com/JustineDevs/BlueprintKit) - This monorepo
+- **Skills Repository**: [JustineDevs/blueprintkit-skill](https://github.com/JustineDevs/blueprintkit-skill) - Clean skill-only repository for skills.sh
+- **Main Repository**: [JustineDevs/StarterPack](https://github.com/JustineDevs/StarterPack) - This monorepo (starter pack with frontend)
 
 ## Installation Options
 
 ### Option 1: Install Skill Only (Recommended for AI Agents)
 
 ```bash
-npx skills add JustineDevs/skills-collection
+npx skills add JustineDevs/blueprintkit-skill
 ```
 
 This installs only the skill files, perfect for AI agent usage.
@@ -136,8 +138,8 @@ This installs only the skill files, perfect for AI agent usage.
 ### Option 2: Use Complete Starter Pack
 
 ```bash
-git clone https://github.com/JustineDevs/BlueprintKit.git
-cd BlueprintKit/starter-pack
+git clone https://github.com/JustineDevs/StarterPack.git
+cd StarterPack/starter-pack
 npm install
 npm run dev
 ```
@@ -169,14 +171,10 @@ We welcome contributions! To contribute:
 4. **Push to your branch** (`git push origin feature/amazing-feature`)
 5. **Open a Pull Request** with a clear description of your changes
 
+For detailed contribution guidelines, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 Contributions to this project are accepted under the same license.
-
-## About
-
-Starter Pack Template that synthesizes end-to-end execution playbooks, frameworks, and blueprints from practitioners who've generated measurable ROI.
-
-[plan.jstn.site](https://plan.jstn.site/)
