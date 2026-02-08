@@ -238,7 +238,7 @@ Think of these like chapters in a book. Each one covers a different part of plan
 ### In Your Files
 
 ```
-📁 starter-pack/
+📁 BlueprintKit/
 │
 ├── 📄 START-HERE.md          ← Read this first
 ├── 📄 QUICK-START.md          ← 5-minute overview
