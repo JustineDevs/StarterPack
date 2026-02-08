@@ -1,5 +1,5 @@
 ---
-name: automation-orchestrator
+# name: automation-orchestrator (internal - not a standalone skill)
 description: >
   Orchestrate project automation scripts for setup, validation, and deployment.
   Use this skill when the user wants to run or modify repo automation, such as

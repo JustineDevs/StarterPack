@@ -1,5 +1,5 @@
 ---
-name: agile-executor
+# name: agile-executor (internal - not a standalone skill)
 description: Execute Agile methodologies effectively through sprint planning, retrospectives, and ceremony facilitation.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: tech-stack-selector
+# name: tech-stack-selector (internal - not a standalone skill)
 description: Make informed technology decisions with structured frameworks, decision matrices, and recommendations based on constraints.
 ---
 

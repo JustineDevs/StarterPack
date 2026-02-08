@@ -1,5 +1,5 @@
 ---
-name: ci-cd-pipeline-builder
+# name: ci-cd-pipeline-builder (internal - not a standalone skill)
 description: Set up automated CI/CD pipelines with GitHub Actions, ensuring quality gates and automated deployments.
 ---
 

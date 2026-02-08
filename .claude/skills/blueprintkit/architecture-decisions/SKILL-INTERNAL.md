@@ -1,5 +1,5 @@
 ---
-name: architecture-decisions
+# name: architecture-decisions (internal - not a standalone skill)
 description: Document architecture decisions using Architecture Decision Records (ADRs) with context, alternatives, and consequences.
 ---
 

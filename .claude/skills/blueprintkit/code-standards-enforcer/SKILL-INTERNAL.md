@@ -1,5 +1,5 @@
 ---
-name: code-standards-enforcer
+# name: code-standards-enforcer (internal - not a standalone skill)
 description: Ensure code quality or perform code reviews through comprehensive checklists and standards enforcement.
 ---
 

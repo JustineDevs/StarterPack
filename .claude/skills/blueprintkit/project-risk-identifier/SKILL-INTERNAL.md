@@ -1,5 +1,5 @@
 ---
-name: project-risk-identifier
+# name: project-risk-identifier (internal - not a standalone skill)
 description: Identify, assess, and mitigate project risks through structured risk analysis frameworks.
 ---
 
