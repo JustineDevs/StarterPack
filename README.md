@@ -23,7 +23,7 @@ The skill-only files for publishing to [skills.sh](https://skills.sh). This dire
 npx skills add JustineDevs/blueprintkit-skill
 ```
 
-### 🚀 `starter-pack/` - Complete Starter Pack
+### `starter-pack/` - Complete Starter Pack
 
 The full starter pack with frontend, documentation, and all project files:
 
