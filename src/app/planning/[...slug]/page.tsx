@@ -20,7 +20,7 @@ async function getPlanningContent(slug: string[]) {
   if (fileName.endsWith('.md')) {
     fileName = fileName.slice(0, -3)
   }
-  const filePath = join(process.cwd(), 'planning', `${fileName}.md`)
+  const filePath = join(process.cwd(), '.claude', 'skills', 'blueprintkit', 'planning', `${fileName}.md`)
   
   try {
     const content = await readFile(filePath, 'utf-8')
