@@ -36,9 +36,29 @@ function log(message, color = 'reset') {
   console.log(`${colors[color]}${message}${colors.reset}`);
 }
 
+// Get the git repository root directory
+function getGitRoot() {
+  try {
+    const root = execSync('git rev-parse --show-toplevel', { encoding: 'utf8' }).trim();
+    return root;
+  } catch (error) {
+    log('Error finding git root:', 'red');
+    log(error.message, 'red');
+    process.exit(1);
+  }
+}
+
 function getChangedFiles() {
   try {
-    const output = execSync('git status --porcelain', { encoding: 'utf8' });
+    const gitRoot = getGitRoot();
+    const currentDir = process.cwd();
+    
+    // Run git status from repository root
+    const output = execSync('git status --porcelain', { 
+      encoding: 'utf8',
+      cwd: gitRoot 
+    });
+    
     return output
       .split('\n')
       .filter(line => line.trim())
@@ -170,7 +190,8 @@ function getCommitMessage(file, status) {
   const action = status.includes('A') ? 'add' : 
                  status.includes('M') ? 'update' : 
                  status.includes('D') ? 'remove' : 
-                 status.includes('R') ? 'refactor' : 'chore';
+                 status.includes('R') ? 'refactor' : 
+                 status.includes('??') ? 'add' : 'chore';
   
   if (category && purpose) {
     message = `${action}: ${purpose}`;
@@ -179,7 +200,17 @@ function getCommitMessage(file, status) {
     }
   } else {
     // Fallback to file-based message
-    message = `${action}: ${fileName}`;
+    // For deleted files, extract meaningful name from path
+    if (status.includes('D')) {
+      const pathParts = file.split('/');
+      const meaningfulName = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2] || fileName;
+      message = `${action}: ${meaningfulName}`;
+      if (file.includes('.claude-plugin')) {
+        message = `${action}: Claude plugin ${meaningfulName}`;
+      }
+    } else {
+      message = `${action}: ${fileName}`;
+    }
     if (dirName && dirName !== '.' && !dirName.includes('.')) {
       message += ` in ${dirName}`;
     }
@@ -191,6 +222,7 @@ function getCommitMessage(file, status) {
 function commitFile(file, status) {
   return new Promise((resolve, reject) => {
     const commitMessage = getCommitMessage(file, status);
+    const gitRoot = getGitRoot();
     
     if (config.dryRun) {
       log(`[DRY RUN] Would commit: "${file}" - "${commitMessage}"`, 'yellow');
@@ -200,10 +232,17 @@ function commitFile(file, status) {
     
     try {
       // Add the specific file with proper quoting for spaces
-      execSync(`git add "${file}"`, { stdio: 'pipe' });
+      // Run from git root to ensure correct path resolution
+      execSync(`git add "${file}"`, { 
+        stdio: 'pipe',
+        cwd: gitRoot 
+      });
       
       // Commit the file with proper quoting for the message
-      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
+      execSync(`git commit -m "${commitMessage}"`, { 
+        stdio: 'pipe',
+        cwd: gitRoot 
+      });
       
       log(`✅ Committed: "${file}"`, 'green');
       resolve({ file, success: true, message: commitMessage });
@@ -284,8 +323,10 @@ async function main() {
   }
   
   try {
-    // Check if we're in a git repository
-    execSync('git rev-parse --git-dir', { stdio: 'pipe' });
+    // Check if we're in a git repository and get root
+    const gitRoot = getGitRoot();
+    log(`📁 Git repository root: ${gitRoot}`, 'cyan');
+    log(`📁 Current directory: ${process.cwd()}`, 'cyan');
   } catch (error) {
     log('❌ Not in a git repository!', 'red');
     process.exit(1);
