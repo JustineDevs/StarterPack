@@ -48,7 +48,7 @@ export function Header() {
               )
             })}
             <a
-              href="https://github.com/JustineDevs/starter-pack"
+              href="https://github.com/JustineDevs/BlueprintKit"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 p-2 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-all duration-200"
@@ -93,7 +93,7 @@ export function Header() {
               )
             })}
             <a
-              href="https://github.com/JustineDevs/starter-pack"
+              href="https://github.com/JustineDevs/BlueprintKit"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
